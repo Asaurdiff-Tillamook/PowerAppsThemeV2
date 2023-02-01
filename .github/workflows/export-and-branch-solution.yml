@@ -25,9 +25,9 @@ on:
        default: solutions/
 env:
 #edit your values here
-  ENVIRONMENT_URL: '<ENVIRONMENTURL>'
-  CLIENT_ID: '<APPID>'
-  TENANT_ID: '<TENANT ID>'
+  ENVIRONMENT_URL: 'https://operations-tillamook-test2.crm.dynamics.com'
+  CLIENT_ID: '88cbd70c-6e75-4fd0-b9ad-a781ff738599'
+  TENANT_ID: 'd7a24e48-07da-410e-9827-86fbeed880f9'
 
 jobs:
   export-from-dev:
@@ -44,10 +44,10 @@ jobs:
     - name: who-am-i action
       uses: microsoft/powerplatform-actions/who-am-i@v0
       with:
-        environment-url: ${{https://operations-tillamook-test2.crm.dynamics.com}}
-        app-id: ${{88cbd70c-6e75-4fd0-b9ad-a781ff738599}}
+        environment-url: ${{env.ENVIRONMENT_URL}}
+        app-id: ${{env.CLIENT_ID}}
         client-secret: ${{ secrets.PowerPlatformSPN }}
-        tenant-id: ${{d7a24e48-07da-410e-9827-86fbeed880f9}}
+        tenant-id: ${{env.TENANT_ID}}
 
 
     - name: export-solution action
