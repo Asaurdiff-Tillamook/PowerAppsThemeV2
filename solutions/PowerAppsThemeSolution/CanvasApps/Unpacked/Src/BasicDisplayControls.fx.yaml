@@ -1,0 +1,213 @@
+BasicDisplayControls As screen:
+    Height: =Max(App.Height, App.DesignHeight)
+    OnHidden: =Reset(Menu_3)
+    Orientation: =If(BasicDisplayControls.Width < BasicDisplayControls.Height, Layout.Vertical, Layout.Horizontal)
+    Size: =1 + CountRows(App.SizeBreakpoints) - CountIf(App.SizeBreakpoints, Value >= BasicDisplayControls.Width)
+    Width: =Max(App.Width, App.DesignWidth)
+
+    Label_Sample_1 As label:
+        PaddingRight: =5.86
+        PaddingTop: =5.86
+        Size: =16.40
+        Text: ="Label"
+        Width: =175.70
+        X: =60.91
+        Y: =195
+        ZIndex: =1
+
+    Button_Sample_1 As button:
+        PaddingRight: =5.86
+        PaddingTop: =5.86
+        Size: =17.57
+        Text: ="Default Btn"
+        Width: =187.41
+        X: =60.91
+        Y: =313
+        ZIndex: =2
+
+    HtmlText_Sample_1 As htmlViewer:
+        HtmlText: ="<b><font color=blue>HTML</font></b> text"
+        PaddingRight: =5.86
+        PaddingTop: =5.86
+        PressedBorderColor: =HtmlText_Sample_1.BorderColor
+        Size: =12.88
+        Width: =234.26
+        X: =60.91
+        Y: =253
+        ZIndex: =3
+
+    Icon_Sample_1 As icon.Add:
+        Icon: =Icon.Add
+        PaddingRight: =0.00
+        PaddingTop: =0.00
+        Width: =74.96
+        X: =549.34
+        Y: =235
+        ZIndex: =4
+
+    Icon_Sample1_1 As icon.Edit:
+        Icon: =Icon.Edit
+        PaddingRight: =0.00
+        PaddingTop: =0.00
+        Width: =74.96
+        X: =667.64
+        Y: =235
+        ZIndex: =5
+
+    Icon_Sample2_1 As icon.Search:
+        Icon: =Icon.Search
+        PaddingRight: =0.00
+        PaddingTop: =0.00
+        Width: =74.96
+        X: =605.56
+        Y: =306
+        ZIndex: =6
+
+    Label_Icons_1 As label:
+        PaddingRight: =5.86
+        PaddingTop: =5.86
+        Size: =16.40
+        Text: ="Icons"
+        Width: =175.70
+        X: =609.08
+        Y: =195
+        ZIndex: =7
+
+    Label_Instructions_2 As label:
+        BorderColor: =Button.FillDanger
+        BorderThickness: =2
+        FontWeight: =FontWeight.Bold
+        Height: =48
+        PaddingLeft: =20
+        PaddingRight: =5.86
+        PaddingTop: =5.86
+        Size: =16.40
+        Text: ="No need to copy/paste these controls - just for demo purposes."
+        Width: =756.66
+        X: =60.91
+        Y: =120
+        ZIndex: =8
+
+    Button_Back_2 As button:
+        OnSelect: =Navigate(InputControls);
+        PaddingRight: =5.86
+        PaddingTop: =5.86
+        Size: =17.57
+        Text: ="Back"
+        Width: =187.41
+        X: =1171.30
+        Y: =Button.NavigationBackY
+        ZIndex: =11
+
+    Button_Next_2 As button:
+        Color: =Colors.Primary2
+        Fill: =Colors.Primary1
+        OnSelect: =Navigate(GraphicControls);
+        PaddingRight: =5.86
+        PaddingTop: =5.86
+        Size: =17.57
+        Text: ="Next"
+        Width: =187.41
+        X: =1382.14
+        Y: =Button.NavigationNextY
+        ZIndex: =12
+
+    "Gallery_Sample As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver4.0'":
+        AccessibleLabel: ="Gallery_Sample"
+        DisabledBorderColor: =Gallery_Sample.BorderColor
+        DisabledFill: =Gallery_Sample.Fill
+        Height: =367
+        HoverBorderColor: =Gallery_Sample.BorderColor
+        HoverFill: =Gallery_Sample.Fill
+        Items: =SampleCollection
+        Layout: =Layout.Vertical
+        PressedBorderColor: =Gallery_Sample.BorderColor
+        PressedFill: =Gallery_Sample.Fill
+        TabIndex: =0
+        TemplatePadding: =0
+        TemplateSize: =Min(160, Self.Height - 60)
+        Width: =534.11
+        X: =979.21
+        Y: =160
+        ZIndex: =13
+
+        Image3 As image:
+            Height: =128
+            OnSelect: =Select(Parent)
+            PaddingRight: =0.00
+            PaddingTop: =0.00
+            Width: =149.93
+            X: =18.74
+            Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
+            ZIndex: =1
+
+        Title2 As label:
+            Height: =Self.Size * 1.8
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0.00
+            PaddingTop: =0.00
+            Size: =23.43
+            Text: =ThisItem.Name
+            VerticalAlign: =VerticalAlign.Top
+            Width: =262.37
+            X: =196.78
+            Y: =44
+            ZIndex: =2
+
+        Subtitle2 As label:
+            Height: =Self.Size * 1.8
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0.00
+            PaddingTop: =0.00
+            Size: =21.08
+            Text: =ThisItem.Department
+            VerticalAlign: =VerticalAlign.Top
+            Width: =262.37
+            X: =196.78
+            Y: =Title2.Y + Title2.Height + 4
+            ZIndex: =3
+
+        NextArrow2 As icon.ChevronRight:
+            AccessibleLabel: =NextArrow2.Tooltip
+            Height: =60
+            Icon: =Icon.ChevronRight
+            OnSelect: =Select(Parent)
+            PaddingBottom: =10
+            PaddingLeft: =10
+            PaddingRight: =11.71
+            PaddingTop: =11.71
+            TabIndex: =0
+            Tooltip: ="View item details"
+            Width: =70.28
+            X: =457.98
+            Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
+            ZIndex: =4
+
+        Separator2 As rectangle:
+            Height: =1
+            OnSelect: =Select(Parent)
+            Width: =534.11
+            X: =0.00
+            Y: =Parent.TemplateHeight - 1
+            ZIndex: =5
+
+    Label_Gallery As label:
+        PaddingRight: =5.86
+        PaddingTop: =5.86
+        Size: =16.40
+        Text: ="Gallery"
+        Width: =175.70
+        X: =979.21
+        Y: =120
+        ZIndex: =14
+
+    Button2 As button:
+        Text: ="Button"
+        X: =60
+        Y: =447
+        ZIndex: =16
+

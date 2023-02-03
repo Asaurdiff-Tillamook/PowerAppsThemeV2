@@ -1,0 +1,112 @@
+Header As CanvasComponent:
+    Fill: =RGBA(0, 0, 0, 0)
+    Height: =82
+    IsDebugMode: =IsDebugMode
+    VariableHeading: =varHeading
+    VariableSubHeading: =varSubHeading
+    Width: =App.Width
+    X: =0
+    Y: =0
+    ZIndex: =3
+
+    Header_Fill As rectangle:
+        BorderColor: =
+        Fill: =RGBA(0, 30, 96, 1)
+        Height: =82
+        Width: =Parent.Width
+        X: =0.00
+        ZIndex: =1
+
+    Header_Icon As image:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        BorderStyle: =BorderStyle.None
+        BorderThickness: =2
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledFill: =RGBA(0, 0, 0, 0)
+        FocusedBorderColor: =Header_Icon.BorderColor
+        FocusedBorderThickness: =4
+        Height: =80
+        HoverBorderColor: =RGBA(0, 0, 0, 0)
+        HoverFill: =RGBA(0, 0, 0, 0)
+        Image: ='Tillamook┬«_Wordmark_o'
+        OnSelect: =Navigate(LookUp(colTheMenu,Item = "Home",Screen),ScreenTransition.Fade)
+        PaddingBottom: =10
+        PaddingLeft: =10
+        PaddingRight: =11.71
+        PaddingTop: =11.71
+        PressedBorderColor: =RGBA(0, 0, 0, 0)
+        PressedFill: =RGBA(0, 0, 0, 0)
+        Width: =152.27
+        X: =0.00
+        Y: =1
+        ZIndex: =2
+
+    Header_Line_Bottom As rectangle:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        DisabledFill: =Header_Line_Bottom.Fill
+        Fill: =RGBA(234, 234, 234, 1)
+        FocusedBorderColor: =Header_Line_Bottom.BorderColor
+        Height: =1
+        HoverFill: =Header_Line_Bottom.Fill
+        PressedFill: =Header_Line_Bottom.Fill
+        Width: =1600.00
+        X: =0.00
+        Y: =81
+        ZIndex: =3
+
+    Header_Label_App As label:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        Color: =RGBA(246, 244, 224, 1)
+        DisabledColor: =RGBA(0, 0, 0, 0)
+        FocusedBorderColor: =Header_Label_App.BorderColor
+        Font: =Font.Verdana
+        FontWeight: =FontWeight.Bold
+        HoverBorderColor: =Header_Label_App.BorderColor
+        HoverColor: =Header_Label_App.Color
+        HoverFill: =Header_Label_App.Fill
+        PressedBorderColor: =Header_Label_App.BorderColor
+        PressedColor: =Header_Label_App.Color
+        PressedFill: =Header_Label_App.Fill
+        Size: =20
+        Text: =Header.VariableHeading
+        Width: =650
+        X: =152.27
+        Y: =1
+        ZIndex: =6
+
+    Header_DebugInfo As htmlViewer:
+        Color: =RGBA(184, 0, 0, 1)
+        Height: =Header.Height
+        HoverBorderColor: =Header_DebugInfo.BorderColor
+        HtmlText: |-
+            ="<strong>Debug Mode<br>CurrentUser: " & Office365Users.MyProfile().Mail 
+        PaddingRight: =5.86
+        PaddingTop: =5.86
+        PressedBorderColor: =Header_DebugInfo.BorderColor
+        Size: =11.71
+        Visible: =Header.IsDebugMode
+        Width: =932
+        X: =667
+        Y: =1
+        ZIndex: =7
+
+    SubHeader_Label_App As label:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        Color: =RGBA(246, 244, 224, 1)
+        DisabledColor: =RGBA(0, 0, 0, 0)
+        FocusedBorderColor: =SubHeader_Label_App.BorderColor
+        Font: =Font.Verdana
+        Height: =32
+        HoverBorderColor: =SubHeader_Label_App.BorderColor
+        HoverColor: =SubHeader_Label_App.Color
+        HoverFill: =SubHeader_Label_App.Fill
+        PressedBorderColor: =SubHeader_Label_App.BorderColor
+        PressedColor: =SubHeader_Label_App.Color
+        PressedFill: =SubHeader_Label_App.Fill
+        Size: =16
+        Text: =Header.VariableSubHeading
+        Width: =650
+        X: =152
+        Y: =41
+        ZIndex: =8
+
