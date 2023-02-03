@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<savedqueries xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <savedquery>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>0</CanBeDeleted>
+    <isquickfindquery>0</isquickfindquery>
+    <isprivate>0</isprivate>
+    <isdefault>1</isdefault>
+    <savedqueryid>{0767c051-96a4-4b73-9752-8844adb51cf6}</savedqueryid>
+    <layoutxml>
+      <grid name="ppadmin_test2_tables" jump="ppadmin_testnumber" select="1" icon="1" preview="1">
+        <row name="ppadmin_test2_table" id="ppadmin_test2_tableid">
+          <cell name="ppadmin_testnumber" width="300" />
+          <cell name="createdon" width="125" />
+        </row>
+      </grid>
+    </layoutxml>
+    <querytype>2</querytype>
+    <fetchxml>
+      <fetch version="1.0" mapping="logical">
+        <entity name="ppadmin_test2_table">
+          <attribute name="ppadmin_test2_tableid" />
+          <attribute name="ppadmin_testnumber" />
+          <attribute name="createdon" />
+          <order attribute="ppadmin_testnumber" descending="false" />
+          <filter type="and">
+            <condition attribute="statecode" operator="eq" value="0" />
+          </filter>
+        </entity>
+      </fetch>
+    </fetchxml>
+    <IntroducedVersion>1.0</IntroducedVersion>
+    <LocalizedNames>
+      <LocalizedName description="Test2_Table Associated View" languagecode="1033" />
+    </LocalizedNames>
+  </savedquery>
+</savedqueries>
