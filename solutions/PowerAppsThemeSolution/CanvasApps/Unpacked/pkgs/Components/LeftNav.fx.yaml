@@ -1,0 +1,155 @@
+LeftNav As CanvasComponent:
+    Fill: =RGBA(0, 0, 0, 0)
+    Height: =App.Height-82-40
+    OnReset: =Set(varSidebarStatus,true)
+    variableSideBar: =varSidebarStatus
+    VariableSideBarInput: =varSidebarAppStatus
+    Width: =If(Self.variableSideBar=true,42,162)
+    X: =0
+    Y: =0
+    ZIndex: =2
+
+    LeftNavFill As rectangle:
+        BorderColor: =RGBA(0, 18, 107, 1)
+        Fill: =RGBA(0, 30, 96, 1)
+        Height: =LeftNav.Height
+        Width: =If(varSidebarStatus=true,40,160)
+        ZIndex: =1
+
+    LeftNavline As rectangle:
+        BorderColor: =RGBA(0, 18, 107, 1)
+        Fill: =RGBA(255, 157, 25, 1)
+        Height: =LeftNav.Height
+        Width: =2
+        X: =LeftNavFill.Width
+        ZIndex: =2
+
+    GalleryLeftNavCollapsed As gallery.galleryVertical:
+        BorderColor: =RGBA(0, 18, 107, 1)
+        Height: =Parent.Height-40
+        Items: =colLeftNav
+        Layout: =Layout.Vertical
+        TemplatePadding: =0
+        TemplateSize: =50
+        Visible: =If(varSidebarStatus=true,true,false)
+        Width: =40
+        ZIndex: =3
+
+        Icon4 As icon.Add:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(255, 157, 25, 1)
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            DisabledColor: =RGBA(244, 244, 244, 1)
+            DisabledFill: =RGBA(217, 217, 217, 0.5)
+            DisplayMode: =If(IsBlank(ThisItem.Permissions),DisplayMode.Edit,ThisItem.Permissions)
+            Height: =49
+            HoverFill: =ColorFade(RGBA(0, 30, 96, 1),20%)
+            Icon: =ThisItem.Icon
+            OnSelect: =Select(Parent);Navigate(ThisItem.Screen)
+            PaddingBottom: =4
+            PaddingLeft: =4
+            PaddingRight: =4
+            PaddingTop: =4
+            Tooltip: =If(Self.DisplayMode=DisplayMode.Edit,ThisItem.Tooltip,"You do not have sufficent access to the " & ThisItem.Item & " Module.")
+            Width: =40
+            ZIndex: =1
+
+        Rectangle2 As rectangle:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Fill: =RGBA(255, 157, 25, 1)
+            Height: =1
+            OnSelect: =Select(Parent)
+            Width: =34
+            X: =3
+            Y: =49
+            ZIndex: =2
+
+    GalleryLeftNavExpanded As gallery.galleryVertical:
+        BorderColor: =RGBA(0, 18, 107, 1)
+        Height: =Parent.Height-40
+        Items: =colLeftNav
+        Layout: =Layout.Vertical
+        TemplatePadding: =0
+        TemplateSize: =80
+        Visible: =If(varSidebarStatus=true,false,true)
+        Width: =160
+        ZIndex: =4
+
+        ExpandedLeftNav_Icon As icon.Add:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(255, 157, 25, 1)
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            DisabledColor: =RGBA(244, 244, 244, 1)
+            Height: =79
+            HoverFill: =ColorFade(RGBA(0, 30, 96, 1),20%)
+            Icon: =ThisItem.Icon
+            OnSelect: =Select(Parent);Navigate(ThisItem.Screen)
+            PaddingBottom: =10
+            PaddingLeft: =10
+            PaddingRight: =10
+            PaddingTop: =10
+            Tooltip: =ThisItem.Tooltip
+            Width: =60
+            ZIndex: =1
+
+        ExpandedLeftNav_Separator As rectangle:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Fill: =RGBA(255, 157, 25, 1)
+            Height: =1
+            OnSelect: =Select(Parent)
+            X: =5
+            Y: =79
+            ZIndex: =2
+
+        ExpandedLefNav_Label As label:
+            Align: =Align.Center
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(255, 157, 25, 1)
+            DisabledColor: =RGBA(166, 166, 166, 1)
+            Font: =Font.Verdana
+            FontWeight: =FontWeight.Semibold
+            Height: =79
+            OnSelect: =Select(Parent)
+            Size: =8
+            Text: =ThisItem.Item
+            Width: =100
+            X: =60
+            ZIndex: =3
+
+        HoverIcon As icon.Add:
+            BorderColor: =RGBA(0, 18, 107, 1)
+            Color: =RGBA(0,0,0,0)
+            DisabledBorderColor: =RGBA(166, 166, 166, 1)
+            DisabledColor: =RGBA(244, 244, 244, 0)
+            DisabledFill: =RGBA(217, 217, 217, 0.5)
+            DisplayMode: =If(IsBlank(ThisItem.Permissions),DisplayMode.Edit,ThisItem.Permissions)
+            Height: =79
+            HoverColor: =ColorFade(RGBA(0, 30, 96, 0),20%)
+            HoverFill: =ColorFade(RGBA(0, 30, 96, .3),20%)
+            Icon: =ThisItem.Icon
+            OnSelect: =Select(Parent);Navigate(ThisItem.Screen);Set(varSidebarStatus,false)
+            PaddingBottom: =4
+            PaddingLeft: =4
+            PaddingRight: =4
+            PaddingTop: =4
+            Tooltip: =If(Self.DisplayMode=DisplayMode.Edit,ThisItem.Tooltip,"You do not have sufficent access to the " & ThisItem.Item & " Module.")
+            Width: =160
+            ZIndex: =4
+
+    ExpandCollapseIcon As icon.ChevronLeft:
+        BorderColor: =RGBA(0, 18, 107, 1)
+        Color: =RGBA(255, 157, 25, 1)
+        DisabledBorderColor: =RGBA(166, 166, 166, 1)
+        DisabledColor: =RGBA(244, 244, 244, 1)
+        Height: =40
+        Icon: =If(varSidebarStatus=true,Icon.ChevronRight,Icon.ChevronLeft)
+        OnSelect: =Set(varSidebarStatus,!varSidebarStatus)
+        PaddingBottom: =5
+        PaddingLeft: =5
+        PaddingRight: =5
+        PaddingTop: =5
+        Width: =40
+        X: =If(varSidebarStatus=true,0,120)
+        Y: =Parent.Height-40
+        ZIndex: =5
+

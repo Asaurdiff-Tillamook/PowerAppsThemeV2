@@ -1,0 +1,53 @@
+Footer As CanvasComponent:
+    Fill: =RGBA(0,30,96,1)
+    Height: =40
+    varFooterLabel: =varFooterLabel
+    Width: =App.Width
+    X: =0
+    Y: =0
+    ZIndex: =1
+
+    Footer_Label_Year As label:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        Color: =RGBA(255, 252, 230, 1)
+        DisabledColor: =RGBA(0, 30, 96, 1)
+        FocusedBorderColor: =Footer_Label_Year.BorderColor
+        HoverBorderColor: =Footer_Label_Year.BorderColor
+        HoverColor: =Footer_Label_Year.Color
+        HoverFill: =Footer_Label_Year.Fill
+        PaddingLeft: =10
+        PaddingRight: =5.86
+        PaddingTop: =5.86
+        PressedBorderColor: =Footer_Label_Year.BorderColor
+        PressedColor: =Footer_Label_Year.Color
+        PressedFill: =Footer_Label_Year.Fill
+        Text: =Footer.varFooterLabel
+        Width: =175.70
+        ZIndex: =6
+
+    Image1 As image:
+        BorderColor: =
+        DisabledBorderColor: =
+        DisabledFill: =
+        Height: =40
+        Image: =__footerlogo__TILMorningOrange
+        PaddingBottom: =10
+        PaddingLeft: =10
+        PaddingRight: =10
+        PaddingTop: =10
+        Width: =60
+        X: =Parent.Width-60
+        ZIndex: =7
+
+    Footer_Line As rectangle:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        DisabledFill: =Footer_Line.Fill
+        Fill: =RGBA(234, 234, 234, 1)
+        FocusedBorderColor: =Footer_Line.BorderColor
+        Height: =1
+        HoverFill: =Footer_Line.Fill
+        PressedFill: =Footer_Line.Fill
+        Width: =App.Width
+        X: =0.00
+        ZIndex: =8
+

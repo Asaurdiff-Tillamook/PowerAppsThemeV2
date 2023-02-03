@@ -1,0 +1,281 @@
+"'Copy/Paste - Headings & Buttons' As screen":
+    Height: =Max(App.Height, App.DesignHeight)
+    LoadingSpinnerColor: =RGBA(56, 96, 178, 1)
+    OnHidden: =Reset(Menu_1)
+    OnVisible: =
+    Orientation: =If('Copy/Paste - Headings & Buttons'.Width < 'Copy/Paste - Headings & Buttons'.Height, Layout.Vertical, Layout.Horizontal)
+    Size: =1 + CountRows(App.SizeBreakpoints) - CountIf(App.SizeBreakpoints, Value >= 'Copy/Paste - Headings & Buttons'.Width)
+    Width: =Max(App.Width, App.DesignWidth)
+
+    Rectangle1 As rectangle:
+        Width: =244
+        X: =26
+        Y: =551
+        ZIndex: =1
+
+    Button_Back As button:
+        OnSelect: =Navigate(GraphicControls)
+        PaddingRight: =5.86
+        PaddingTop: =5.86
+        Size: =17.57
+        Text: ="Back"
+        Width: =187.41
+        X: =1171.30
+        Y: =Button.NavigationBackY
+        ZIndex: =4
+
+    Button_Next As button:
+        Color: =Colors.Primary2
+        Fill: =Colors.Primary1
+        OnSelect: =Navigate(Settings_Screen)
+        PaddingRight: =5.86
+        PaddingTop: =5.86
+        Size: =17.57
+        Text: ="Next"
+        Width: =187.41
+        X: =1382.14
+        Y: =Button.NavigationNextY
+        ZIndex: =5
+
+    Button_Primary As button:
+        Color: =RGBA(0,30,96,1)
+        Fill: =Colors.Primary3
+        PaddingRight: =5.86
+        PaddingTop: =5.86
+        Size: =17.57
+        Text: ="Primary"
+        Width: =187.41
+        X: =1277.89
+        Y: =177
+        ZIndex: =6
+
+    Button_Danger As button:
+        Color: =Colors.White
+        Fill: =Button.FillDanger
+        PaddingRight: =5.86
+        PaddingTop: =5.86
+        Size: =17.57
+        Text: ="Danger"
+        Width: =187.41
+        X: =1277.89
+        Y: =241
+        ZIndex: =7
+
+    Button_Outline As button:
+        BorderColor: =Colors.Primary1
+        BorderThickness: =1
+        Color: =Colors.Primary1
+        DisabledFill: =RGBA(0, 0, 0, 0)
+        Fill: =RGBA(0, 0, 0, 0)
+        HoverColor: =ColorFade(Self.Color, Button.HoverColorPercent%)
+        HoverFill: =RGBA(0, 0, 0, 0)
+        PaddingRight: =5.86
+        PaddingTop: =5.86
+        PressedBorderColor: =Self.BorderColor
+        PressedFill: =RGBA(0, 0, 0, 0)
+        Size: =17.57
+        Text: ="Outline"
+        Width: =187.41
+        X: =1277.89
+        Y: =305
+        ZIndex: =8
+
+    Button_Link As button:
+        BorderColor: =RGBA(0, 0, 0, 0)
+        BorderThickness: =1
+        Color: =Colors.TextLink
+        DisabledBorderColor: =RGBA(0, 0, 0, 0)
+        DisabledFill: =RGBA(0, 0, 0, 0)
+        Fill: =RGBA(0, 0, 0, 0)
+        HoverBorderColor: =RGBA(0, 0, 0, 0)
+        HoverColor: =ColorFade(Self.Color, Button.HoverColorPercent%)
+        HoverFill: =RGBA(0, 0, 0, 0)
+        PaddingRight: =5.86
+        PaddingTop: =5.86
+        PressedBorderColor: =RGBA(0, 0, 0, 0)
+        PressedFill: =RGBA(0, 0, 0, 0)
+        Size: =17.57
+        Text: ="Link"
+        Width: =187.41
+        X: =1277.89
+        Y: =370
+        ZIndex: =9
+
+    Label_Heading1 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =10
+
+        Label_Heading1_Text As label:
+            FontWeight: =Heading.Bold
+            Height: =47
+            PaddingRight: =5.86
+            PaddingTop: =5.86
+            Size: =32.80
+            Text: ="Heading 1"
+            Width: =234.26
+            X: =483.75
+            Y: =163
+            ZIndex: =10
+
+        Label_Heading1_Line As rectangle:
+            BorderColor: =RGBA(0, 0, 0, 0)
+            BorderStyle: =BorderStyle.None
+            Fill: =Heading.LineColor
+            Height: =Heading.LineHeight
+            Width: =93.70
+            X: =488.43
+            Y: =210
+            ZIndex: =11
+
+    Label_Heading2 As label:
+        FontWeight: =Heading.Bold
+        Height: =47
+        PaddingRight: =5.86
+        PaddingTop: =5.86
+        Size: =28.11
+        Text: ="Heading 2"
+        Width: =203.81
+        X: =483.75
+        Y: =236
+        ZIndex: =12
+
+    Label_Heading3 As label:
+        FontWeight: =Heading.Bold
+        PaddingRight: =5.86
+        PaddingTop: =5.86
+        Size: =21.08
+        Text: ="Heading 3"
+        Width: =158.13
+        X: =483.75
+        Y: =305
+        ZIndex: =13
+
+    Label_Heading4 As label:
+        FontWeight: =Heading.Bold
+        Height: =32
+        PaddingRight: =5.86
+        PaddingTop: =5.86
+        Size: =16.40
+        Text: ="Heading 4"
+        Width: =128.84
+        X: =483.75
+        Y: =368
+        ZIndex: =14
+
+    Label7 As label:
+        Height: =90
+        PaddingRight: =5.86
+        PaddingTop: =5.86
+        Size: =16.40
+        Text: |-
+            ="Copy/paste headings & buttons to use on other pages 
+            "
+        Width: =228.40
+        X: =864.42
+        Y: =181
+        ZIndex: =15
+
+    Label8 As label:
+        Height: =94
+        PaddingRight: =5.86
+        PaddingTop: =5.86
+        Size: =16.40
+        Text: ="Copy/paste Logos "
+        Width: =233.09
+        X: =63.25
+        Y: =319
+        ZIndex: =16
+
+    Label8_1 As label:
+        Height: =150
+        PaddingRight: =5.86
+        PaddingTop: =5.86
+        Size: =16.40
+        Text: |-
+            ="Copy/paste navigation buttons to each page so they appear in the same spot 
+            
+            (X & Y coordinate variables set in OnStart in case you want to change them all later)"
+        Width: =436.90
+        X: =585
+        Y: =558
+        ZIndex: =17
+
+    Icon5 As icon.ArrowUp:
+        Height: =95
+        Icon: =Icon.ArrowUp
+        PaddingRight: =0.00
+        PaddingTop: =0.00
+        Width: =74.96
+        X: =111.27
+        Y: =220
+        ZIndex: =18
+
+    Icon6 As icon.ArrowDown:
+        PaddingRight: =0.00
+        PaddingTop: =0.00
+        Width: =74.96
+        X: =107
+        Y: =433
+        ZIndex: =19
+
+    Icon7 As icon.ArrowLeft:
+        Icon: =Icon.ArrowLeft
+        PaddingRight: =0.00
+        PaddingTop: =0.00
+        Width: =74.96
+        X: =766.03
+        Y: =210
+        ZIndex: =20
+
+    Icon8 As icon.ArrowRight:
+        Icon: =Icon.ArrowRight
+        PaddingRight: =0.00
+        PaddingTop: =0.00
+        Width: =74.96
+        X: =1116.25
+        Y: =210
+        ZIndex: =21
+
+    Icon8_1 As icon.ArrowRight:
+        Icon: =Icon.ArrowRight
+        PaddingRight: =0.00
+        PaddingTop: =0.00
+        Width: =74.96
+        X: =1056.52
+        Y: =601
+        ZIndex: =22
+
+    HtmlText2 As htmlViewer:
+        BorderColor: =Input.BorderColor
+        BorderStyle: =BorderStyle.Solid
+        Color: =Colors.TextMain
+        DisabledFill: =RGBA(0, 0, 0, 0)
+        Fill: =RGBA(0, 0, 0, 0)
+        Height: =97
+        HtmlText: ="(default Blue button still under <b>Insert => Button</b>)"
+        PaddingRight: =5.86
+        PaddingTop: =5.86
+        PressedBorderColor: =HtmlText2.BorderColor
+        Size: =16.40
+        Width: =228.40
+        X: =864.42
+        Y: =275
+        ZIndex: =23
+
+    Image2 As image:
+        Image: =If(varDarkMode=true,'Tillamook┬«_Wordmark_o','Tillamook┬«_Wordmark_blu (1)')
+        Width: =233
+        X: =31
+        Y: =109
+        ZIndex: =25
+
+    Image2_1 As image:
+        Image: =If(varDarkMode=true,'Tillamook┬«_Wordmark_blu (1)','Tillamook┬«_Wordmark_o')
+        Width: =233
+        X: =31
+        Y: =547
+        ZIndex: =26
+
