@@ -3,6 +3,6 @@ Access_Screen As screen:
     Button3 As button:
         Text: ="Button"
         X: =720
-        Y: =668
+        Y: =200
         ZIndex: =2
 
