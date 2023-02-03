@@ -48,7 +48,7 @@ Home_Page As screen:
         Height: =84
         Text: |-
             ="To use the left bar Navigation:   
-            Set the OnVisible Screen Property with the following"
+            Set the OnVisible Screen Property with the following (intserted Text here for testing Development from VSCode)"
         Width: =421
         X: =313
         Y: =165

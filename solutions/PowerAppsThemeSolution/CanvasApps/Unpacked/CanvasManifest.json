@@ -113,10 +113,10 @@
     "InputControls",
     "BasicDisplayControls",
     "GraphicControls",
+    "Settings_Screen",
     "Copy/Paste - Headings & Buttons",
     "Access_Screen",
-    "ScrollableScreen",
-    "Settings_Screen",
+    "ScrollableScreen",    
     "SectionSliderScreen",
     "CharacterMap_Screen",
     "CopyScreen"
